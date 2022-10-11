@@ -10,7 +10,7 @@ export class Bike {
     public purchaseDate: string;
     public contact: boolean;
 
-     
+    
     constructor(id:number, name:string, email:string, phone:string, model:string, serialNumber:string, purchasePrice:number, purchaseDate:string, contact:boolean) {
       this.id = id;
       this.name = name;
