@@ -12,13 +12,19 @@ export class BikeService {
   constructor(private http:HttpClient) { }
 
     getBikes(){
+       let token = localStorage.getItem('access_token');
        const url = '/server/api/v1/bikes';
-       return this.http.get<Bike[]>(url);
+       return this.http.get<Bike[]>(url,
+        {headers: new HttpHeaders().set('Authorization','Bearer ' + token)}
+      );
     }
 
     getBike(id: number){
+      let token = localStorage.getItem('access_token');
       const url = '/server/api/v1/bikes/'+id;
-      return this.http.get<Bike>(url);
+      return this.http.get<Bike>(url,
+        {headers: new HttpHeaders().set('Authorization','Bearer ' + token)}
+      );
     }
 
     createBikeRegistration(bike: Bike){
