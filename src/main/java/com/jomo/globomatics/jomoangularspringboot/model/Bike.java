@@ -48,6 +48,7 @@ public class Bike {
     }
 
     public void setId(Long id) {
+        //should not be set outside
         this.id = id;
     }
 
@@ -118,7 +119,8 @@ public class Bike {
     @Override
     public String toString() {
         return "Bike{" +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", model='" + model + '\'' +
